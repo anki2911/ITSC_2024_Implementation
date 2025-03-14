@@ -1,0 +1,1 @@
+traci.start(["sumo", "-c", "osm.sumocfg"])

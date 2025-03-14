@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-04-03 22:40:02 by Eclipse SUMO netedit Version 1.16.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumocfg-file value="C:\Users\ankita.samaddar\Documents\sumo-1.16.0\docs\examples\TestingExamples\Test_application.sumocfg"/>
+        <route-files value="C:\Users\ankita.samaddar\Documents\sumo-1.16.0\docs\examples\TestingExamples\Test_route.rou.xml"/>
+        <sumo-net-file value="C:\Users\ankita.samaddar\Documents\sumo-1.16.0\docs\examples\TestingExamples\Test_1.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="C:\Users\ankita.samaddar\Documents\sumo-1.16.0\docs\examples\TestingExamples\Test_1.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="0"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.50"/>
+        <rectangular-lane-cut value="0"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="0"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<net version="1.16" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="14.57,24.32,109.26,77.41" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <edge id=":3_0" function="internal">
+        <lane id=":3_0_0" index="0" speed="13.89" length="12.35" shape="88.21,48.93 86.09,46.42 83.81,44.81 81.18,43.62 78.02,42.39"/>
+    </edge>
+    <edge id=":3_1" function="internal">
+        <lane id=":3_1_0" index="0" speed="5.76" length="9.17" shape="79.25,49.25 80.99,47.17 81.36,45.33 80.37,43.74 78.02,42.39"/>
+    </edge>
+
+    <edge id="1to2" from="1" to="2" priority="-1">
+        <lane id="1to2_0" index="0" speed="13.89" length="41.95" shape="13.17,65.53 33.47,28.82"/>
+    </edge>
+    <edge id="2to3" from="3" to="2" priority="-1">
+        <lane id="2to3_0" index="0" speed="13.89" length="40.07" shape="78.02,42.39 40.90,27.31"/>
+    </edge>
+    <edge id="2to4" from="4" to="2" priority="-1">
+        <lane id="2to4_0" index="0" speed="13.89" length="42.81" shape="49.65,71.25 37.79,30.12"/>
+    </edge>
+    <edge id="3to4" from="4" to="3" priority="-1">
+        <lane id="3to4_0" index="0" speed="13.89" length="34.43" shape="53.79,72.43 79.25,49.25"/>
+    </edge>
+    <edge id="3to5" from="5" to="3" priority="-1">
+        <lane id="3to5_0" index="0" speed="13.89" length="35.38" shape="107.93,78.30 88.21,48.93"/>
+    </edge>
+
+    <junction id="1" type="dead_end" x="14.57" y="66.30" incLanes="" intLanes="" shape="14.57,66.30 11.77,64.75"/>
+    <junction id="2" type="dead_end" x="37.78" y="24.32" incLanes="2to4_0 2to3_0 1to2_0" intLanes="" shape="36.25,30.56 39.32,29.67 39.25,28.93 39.36,28.73 39.57,28.64 39.88,28.66 40.30,28.80 41.50,25.83 39.38,25.14 37.47,24.87 35.79,25.02 34.33,25.60 33.09,26.61 32.06,28.04 34.87,29.59 35.34,29.12 35.57,29.18 35.80,29.44 36.03,29.90"/>
+    <junction id="3" type="priority" x="87.04" y="44.32" incLanes="3to5_0 3to4_0" intLanes=":3_0_0 :3_1_0" shape="86.88,49.82 89.53,48.03 87.88,45.80 86.43,44.33 84.98,43.36 83.33,42.64 81.28,41.91 78.63,40.90 77.42,43.87 79.15,45.00 79.46,45.67 79.40,46.40 78.97,47.20 78.17,48.07 80.32,50.43 82.97,48.62 84.12,48.31 85.16,48.41 86.08,48.91">
+        <request index="0" response="10" foes="10" cont="0"/>
+        <request index="1" response="00" foes="01" cont="0"/>
+    </junction>
+    <junction id="4" type="dead_end" x="52.59" y="75.68" incLanes="" intLanes="" shape="54.87,73.61 52.71,71.24 52.05,71.64 51.78,71.64 51.54,71.50 51.34,71.22 51.19,70.81 48.11,71.70 49.68,74.75 50.72,75.37 51.93,75.38 53.31,74.80"/>
+    <junction id="5" type="dead_end" x="109.26" y="77.41" incLanes="" intLanes="" shape="109.26,77.41 106.60,79.19"/>
+
+    <connection from="3to4" to="2to3" fromLane="0" toLane="0" via=":3_1_0" dir="r" state="M"/>
+    <connection from="3to5" to="2to3" fromLane="0" toLane="0" via=":3_0_0" dir="s" state="m"/>
+
+    <connection from=":3_0" to="2to3" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":3_1" to="2to3" fromLane="0" toLane="0" dir="r" state="M"/>
+
+</net>
